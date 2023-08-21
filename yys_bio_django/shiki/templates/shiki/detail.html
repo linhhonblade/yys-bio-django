@@ -1,0 +1,17 @@
+{% extends "shiki/base.html" %}
+{% block content %}
+<legend>
+    <img src="{{ shiki.avatar.url }}">
+    <h1>{{ shiki.name }}</h1>
+</legend>
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<b>Roles</b>
+{% for role in shiki.role_ids.all %}
+    <img src="{{ role.icon.url }}" style="background-color: red">
+{% endfor %}
+</br>
+<b>Lanes</b>
+{% for lane in shiki.lane_ids.all %}
+    {{ lane }}<br/>
+{% endfor %}
+{% endblock content %}

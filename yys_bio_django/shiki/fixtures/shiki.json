@@ -1,0 +1,62 @@
+[
+  {
+    "model": "shiki.Shiki",
+    "pk": 1,
+    "fields": {
+      "avatar": "static/shiki_avatar/shiro_mujou.png",
+      "name": "Shiro Mujou",
+      "gender": "male",
+      "role_ids": [1]
+    }
+  },
+  {
+    "model": "shiki.Shiki",
+    "pk": 2,
+    "fields": {
+      "avatar": "static/shiki_avatar/kuro_mujou.png",
+      "name": "Kuro Mujou",
+      "gender": "male",
+      "role_ids": [2]
+    }
+  },
+  {
+    "model": "shiki.Shiki",
+    "pk": 3,
+    "fields": {
+      "avatar": "static/shiki_avatar/suzuka_gozen.png",
+      "name": "Suzuka Gozen",
+      "gender": "female",
+      "role_ids": [4]
+    }
+  },
+  {
+    "model": "shiki.Shiki",
+    "pk": 4,
+    "fields": {
+      "avatar": "static/shiki_avatar/kuro.png",
+      "name": "Kuro",
+      "gender": "male",
+      "role_ids": [5]
+    }
+  },
+  {
+    "model": "shiki.Shiki",
+    "pk": 5,
+    "fields": {
+      "avatar": "static/shiki_avatar/ichimoku_ren.png",
+      "name": "Ichimoku Ren",
+      "gender": "male",
+      "role_ids": [6]
+    }
+  },
+  {
+    "model": "shiki.Shiki",
+    "pk": 6,
+    "fields": {
+      "avatar": "static/shiki_avatar/hoshiguma_douji.png",
+      "name": "Hoshiguma Douji",
+      "gender": "male",
+      "role_ids": [1, 3]
+    }
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "model": "shiki.Role",
+    "pk": 1,
+    "fields": {
+      "icon": "static/mage_icon.png",
+      "name": "Mage"
+    }
+  },
+  {
+    "model": "shiki.Role",
+    "pk": 2,
+    "fields": {
+      "icon": "static/samurai_icon.png",
+      "name": "Samurai"
+    }
+  },
+  {
+    "model": "shiki.Role",
+    "pk": 3,
+    "fields": {
+      "icon": "static/ninja_icon.png",
+      "name": "Ninja"
+    }
+  },
+  {
+    "model": "shiki.Role",
+    "pk": 4,
+    "fields": {
+      "icon": "static/marksman_icon.png",
+      "name": "Marksman"
+    }
+  },
+  {
+    "model": "shiki.Role",
+    "pk": 5,
+    "fields": {
+      "icon": "static/tank_icon.png",
+      "name": "Tank"
+    }
+  },
+  {
+    "model": "shiki.Role",
+    "pk": 6,
+    "fields": {
+      "icon": "static/support_icon.png",
+      "name": "Support"
+    }
+  },
+  {
+    "model": "shiki.Role",
+    "pk": 7,
+    "fields": {
+      "icon": "static/all_role_icon.png",
+      "name": "All"
+    }
+  }
+]

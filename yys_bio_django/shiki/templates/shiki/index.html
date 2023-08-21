@@ -1,0 +1,12 @@
+{% extends "shiki/base.html" %}
+{% block content %}
+    {% if most_favorite_shiki %}
+    <ul>
+        {% for shiki in most_favorite_shiki %}
+        <li><a href="{% url 'shiki:detail' shiki.id %}">{{ shiki.name }}</a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No shiki are available.</p>
+    {% endif %}
+{% endblock content %}
