@@ -1,7 +1,5 @@
 from django.db import models
 from django.utils.html import mark_safe
-from django.utils import timezone
-from django.contrib import admin
 
 
 class Role(models.Model):
@@ -42,7 +40,7 @@ class Shiki(models.Model):
         return "\n".join([r.name for r in self.role_ids.all()])
 
     def get_lanes(self):
-        return "\n".join([l.name for l in self.lane_ids.all()])
+        return "\n".join([lane.name for lane in self.lane_ids.all()])
 
     def avatar_image(self):
         return mark_safe('<img src=%s />' % self.avatar.url)

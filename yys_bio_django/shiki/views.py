@@ -1,10 +1,8 @@
-from django.http import HttpResponseRedirect
-from django.shortcuts import get_object_or_404, render
-from django.urls import reverse
+from django.shortcuts import render
 from django.views import generic
 from django.db.models import Q
 
-from .models import Role, Lane, Shiki
+from .models import Shiki
 
 
 class IndexView(generic.ListView):
