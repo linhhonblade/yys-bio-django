@@ -27,7 +27,7 @@ class Shiki(models.Model):
         ("male", "Male"),
         ("female", "Female"),
     ]
-    gender = models.CharField(choices=GENDER)
+    gender = models.CharField(choices=GENDER, max_length=100)
     avatar = models.ImageField(blank=True)
     role_ids = models.ManyToManyField(Role, blank=True)
     lane_ids = models.ManyToManyField(Lane, blank=True)
