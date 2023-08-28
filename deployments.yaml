@@ -15,22 +15,22 @@ spec:
       metadata:
         name: yys-deployment
         labels:
-          app: yys_django
+          app: yys
       spec:
         replicas: 1
         selector:
           matchLabels:
-            app: yys_django
+            app: yys
         template:
           metadata:
             labels:
-              app: yys_django
+              app: yys
           spec:
             containers:
-              - name: yys_django
-                image: yys_django:v0
+              - name: yys
+                image: yys:v0
                 ports:
                   - containerPort: 80000
-    name: yys_django.yaml
+    name: yys.yaml
   targets:
   - clusterName: onnet
