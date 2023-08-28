@@ -1,0 +1,36 @@
+kind: Bundle
+apiVersion: fleet.cattle.io/v1alpha1
+metadata:
+  # Any name can be used here
+  name: yys-deployment
+  # For single cluster use fleet-local, otherwise use the namespace of
+  # your choosing
+  namespace: fleet-local
+spec:
+  resources:
+  # List of all resources that will be deployed
+  - content: |
+      apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: yys-deployment
+        labels:
+          app: yys_django
+      spec:
+        replicas: 1
+        selector:
+          matchLabels:
+            app: yys_django
+        template:
+          metadata:
+            labels:
+              app: yys_django
+          spec:
+            containers:
+              - name: yys_django
+                image: yys_django:v0
+                ports:
+                  - containerPort: 80000
+    name: yys_django.yaml
+  targets:
+  - clusterName: onnet
