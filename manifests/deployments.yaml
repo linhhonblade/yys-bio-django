@@ -5,7 +5,7 @@ metadata:
   name: yys-deployment
   # For single cluster use fleet-local, otherwise use the namespace of
   # your choosing
-  namespace: fleet-local
+  namespace: fleet-default
 spec:
   resources:
   # List of all resources that will be deployed
