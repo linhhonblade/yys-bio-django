@@ -2,7 +2,7 @@ kind: Bundle
 apiVersion: fleet.cattle.io/v1alpha1
 metadata:
   # Any name can be used here
-  name: yys-deployment
+  name: my-bundle
   # For single cluster use fleet-local, otherwise use the namespace of
   # your choosing
   namespace: fleet-local
@@ -13,24 +13,24 @@ spec:
       apiVersion: apps/v1
       kind: Deployment
       metadata:
-        name: yys
+        name: nginx-deployment
         labels:
-          app: yys
+          app: nginx
       spec:
-        replicas: 1
+        replicas: 3
         selector:
           matchLabels:
-            app: yys
+            app: nginx
         template:
           metadata:
             labels:
-              app: yys
+              app: nginx
           spec:
             containers:
-              - name: yys
-                image: yys:v0
+              - name: nginx
+                image: nginx:1.14.2
                 ports:
-                  - containerPort: 8000
-    name: yys.yaml
+                  - containerPort: 80
+    name: nginx.yaml
   targets:
-  - clusterName: onnet
+  - clusterName: local
