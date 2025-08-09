@@ -4,3 +4,7 @@ venv/
 .idea/
 migrations
 db.sqlite3
+.python-version
+django38
+staticfiles
+.env

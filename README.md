@@ -1,6 +1,6 @@
 Command to build docker image
 ```shell
-docker build -t yys_django:tag .
+docker build -t yys_django:v0 .
 ```
 
 Command to run image first time with migrate and loaddata
@@ -15,6 +15,6 @@ docker run --env-file .env yys_django:v0 sh -c "python manage.py collectstatic -
 
 Command to up service
 ```shell
-docker run --env-file env -p 80:8000 yys_django:v0
+docker run --env-file .env -p 8000:8000 yys_django:v0
 ```
 

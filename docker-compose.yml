@@ -1,0 +1,38 @@
+version: '1'
+
+services:
+  web:
+    build: .
+    container_name: yys_bio_django
+    command: gunicorn yys_bio_django.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - .:/app
+      - static_volume:/app/staticfiles
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    networks:
+      - django_network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"  # cho phép container truy cập DB trên localhost
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx_server
+    ports:
+      - "80:80"
+    volumes:
+      - static_volume:/app/staticfiles
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - web
+    networks:
+      - django_network
+
+volumes:
+  static_volume:
+
+networks:
+  django_network:
+    driver: bridge

@@ -1,5 +1,9 @@
 FROM python:3.8-alpine3.17
-ADD yys_bio_django/requirements.txt /app/requirements.txt
+
+WORKDIR /app
+
+# Copy requirements
+COPY requirements.txt /app/requirements.txt
 
 RUN set -ex \
     && apk add --no-cache --virtual .build-deps postgresql-dev build-base \
@@ -14,12 +18,14 @@ RUN set -ex \
     && apk add --virtual rundeps $runDeps \
     && apk del .build-deps
 
-ADD yys_bio_django /app
-WORKDIR /app
+COPY . /app
 
 ENV VIRTUAL_ENV /env
 ENV PATH /env/bin:$PATH
 
+# Collect staticfiles
+RUN python manage.py collectstatic --noinput
+
 EXPOSE 8000
 
-CMD ["gunicorn", "--bind", ":8000", "--workers", "3", "yys_bio_django.wsgi:application"]
+CMD ["gunicorn", "--bind", ":8000", "--workers", "1", "yys_bio_django.wsgi:application"]
